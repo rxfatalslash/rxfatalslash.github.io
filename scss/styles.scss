@@ -1,6 +1,10 @@
 $nodeco: none;
 $ffamily: sans-serif;
 
+body {
+    font-family: $ffamily;
+}
+
 a:link, a:hover, a:visited {
     text-decoration: $nodeco;
 }
