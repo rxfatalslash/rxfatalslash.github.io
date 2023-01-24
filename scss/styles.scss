@@ -1,4 +1,5 @@
 $ffamily: sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
     font-family: $ffamily;
@@ -13,4 +14,11 @@ body {
 .txt {
     font-family: $ffamily;
     font-size: 20px;
+}
+
+#reloj {
+    background-color: transparent;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10pt;
+    text-align: center;
 }
