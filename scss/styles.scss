@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  position: relative;
 }
 
 .txtredes {
@@ -11,4 +12,9 @@ body {
 .txt {
   font-family: sans-serif;
   font-size: 20px;
+}
+
+.curso {
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
