@@ -1,4 +1,4 @@
-function reloj() {
+const reloj = () => {
     var now = new Date();
     var hora = now.getHours();
     var minuto = now.getMinutes();
