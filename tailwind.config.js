@@ -10,6 +10,9 @@ module.exports = {
       backgroundColor: {
         proyectos: "#a8e4ff",
         containers: "#cff0ff",
+        twitter: "#1da1f2",
+        instagram: "#833ab4",
+        facebook: "#3b5998",
       },
       colors: {
         disabled: "#757778",
