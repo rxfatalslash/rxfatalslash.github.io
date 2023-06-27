@@ -4,35 +4,10 @@ import axios from "axios"
 
 function App() {
   const [hover, setHover] = useState("about-me")
-  const [nombre, setNombre] = useState("")
-  const [email, setEmail] = useState("")
-  const [mensaje, setMensaje] = useState("")
 
   const handleHover = (option) => {
     setHover((prevOption) => (prevOption === option ? null : option));
   };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-
-    const formData = {
-      nombre: nombre,
-      email: email,
-      mensaje:mensaje
-    }
-
-    try {
-      const response = await axios.post("localhost:3300/api/enviar-correo", formData)
-
-      if (response.statusCode !== 200) {
-        console.log("Hubo un error al enviar el formulario")
-      }
-    }
-    catch (error) {
-      // Error de red u otro tipo de error
-      alert("Hubo un error en la solicitud", error)
-    }
-  }
 
   return (
     <div>
@@ -253,28 +228,26 @@ function App() {
           <h1 className="text-[50px] text-center font-rising-sun font-semibold tracking-normal mx-10 rounded-sm">
             Contacto
           </h1>
-          <form className="mt-10" onSubmit={handleSubmit}>
+          <form className="mt-10" action="https://formsubmit.co/aaronsanchezmenendez@gmail.com" method="post">
             <div className="grid grid-cols-12">
               <div className="col-start-2 md:col-start-4 col-span-5 md:col-span-3 flex flex-col">
                 <label className="font-bold" htmlFor="nombre">Nombre</label>
                 <input
                   id="nombre"
+                  name="nombre"
                   className="h-[60px] px-4 rounded-lg mt-2 focus:outline-blue-400"
                   type="text"
                   placeholder="John Doe"
-                  value={nombre}
-                  onChange={(event) => setNombre(event.target.value)}
                 />
               </div>
               <div className="col-span-5 md:col-span-3 ml-5 flex flex-col">
                 <label className="font-bold" htmlFor="email">Email</label>
                 <input
                   id="email"
+                  name="email"
                   className="h-[60px] px-4 rounded-lg mt-2 focus:outline-blue-400"
                   type="email"
                   placeholder="example@gmail.com"
-                  value={email}
-                  onChange={(event) => {setEmail(event.target.value)}}
                 />
               </div>
             </div>
@@ -283,10 +256,9 @@ function App() {
                 <label className="font-bold" htmlFor="mensaje">Mensaje</label>
                 <textarea
                   id="mensaje"
+                  name="mensaje"
                   className="rounded-lg px-4 py-4 mt-2 focus:outline-blue-400"
                   placeholder="Escribe aquí tu mensaje..."
-                  value={mensaje}
-                  onChange={(event) => {setMensaje(event.target.value)}}
                   rows="5"
                 ></textarea>
               </div>
