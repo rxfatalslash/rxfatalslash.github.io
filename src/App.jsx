@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar"
 
 function App() {
   const [hover, setHover] = useState("about-me")
-  const [email, setEmail] = useState("")
   const [isValid, setIsValid] = useState("false")
 
   const handleHover = (option) => {
@@ -12,7 +11,6 @@ function App() {
 
   const handleChange = (event) => {
     const { value } = event.target
-    setEmail(value)
     setIsValid(validateEmail(value))
   }
 
