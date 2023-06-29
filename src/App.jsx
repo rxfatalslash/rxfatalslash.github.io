@@ -3,10 +3,23 @@ import Navbar from "./components/Navbar"
 
 function App() {
   const [hover, setHover] = useState("about-me")
+  const [email, setEmail] = useState("")
+  const [isValid, setIsValid] = useState("false")
 
   const handleHover = (option) => {
     setHover((prevOption) => (prevOption === option ? null : option));
-  };
+  }
+
+  const handleChange = (event) => {
+    const { value } = event.target
+    setEmail(value)
+    setIsValid(validateEmail(value))
+  }
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,})+$/
+    return emailRegex.test(email)
+  }
 
   return (
     <div>
@@ -227,7 +240,7 @@ function App() {
           <h1 className="text-[50px] text-center font-rising-sun font-semibold tracking-normal mx-10 rounded-sm">
             Contacto
           </h1>
-          <form className="mt-10" action="https://formsubmit.co/aaronsanchezmenendez@gmail.com" method="post">
+          <form className="mt-10" action="https://formsubmit.co/aaronsanchezmenendez@gmail.com" method="post" onChange={handleChange}>
             <div className="grid grid-cols-12">
               <div className="col-start-2 md:col-start-4 col-span-5 md:col-span-3 flex flex-col">
                 <label className="font-bold" htmlFor="nombre">Nombre</label>
@@ -244,7 +257,7 @@ function App() {
                 <input
                   id="email"
                   name="email"
-                  className="h-[60px] px-4 rounded-lg mt-2 focus:outline-blue-400"
+                  className={`${isValid ? "focus:outline-blue-400" : "outline-red-400"} h-[60px] px-4 rounded-lg mt-2`}
                   type="email"
                   placeholder="example@gmail.com"
                 />
