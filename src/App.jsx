@@ -144,7 +144,7 @@ function App() {
               )}
             </a>
             <a
-              href="https://github.com/rxfatalslash/debian_http"
+              href="https://github.com/rxfatalslash/asir-tfg/blob/main/RS2.pdf"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={() => handleHover("option3")}
@@ -154,18 +154,18 @@ function App() {
                 <div className="relative">
                   <img
                     className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes filter blur-sm transition-all duration-200 ease-in-out"
-                    src={require("./img/apache.png")}
+                    src={require("./img/tfg-asir.png")}
                     alt="Logo Apache"
                   />
-                  <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[10%] md:left-[20%] transition-all duration-200 ease-in-out">
-                    Servidor Apache en Docker
+                  <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[20%] md:left-[40%] transition-all duration-200 ease-in-out">
+                    TFG ASIR
                   </p>
                 </div>
               ) : (
                 <div>
                   <img
                     className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes transition-all duration-200 ease-in-out"
-                    src={require("./img/apache.png")}
+                    src={require("./img/tfg-asir.png")}
                     alt="Logo Apache"
                   />
                 </div>
