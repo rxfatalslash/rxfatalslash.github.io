@@ -11,7 +11,7 @@ module.exports = {
         proyectos: "#a8e4ff",
         containers: "#cff0ff",
         github: "#595858",
-        instagram: "#833ab4",
+        linkedin: "#0e76a8",
         facebook: "#3b5998",
       },
       colors: {
