@@ -116,7 +116,7 @@ function App() {
               )}
             </a>
             <a
-              href="https://rxfatalslash.github.io/widecopy"
+              href="https://github.com/rxfatalslash/widecopy"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={() => handleHover("option2")}
