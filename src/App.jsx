@@ -46,7 +46,7 @@ function App() {
               <br />
               <br />
               Estoy interesado en la ciberseguridad y actualmente estoy
-              investigando el tema por mi cuenta.
+              cursando una especialización en este campo.
             </p>
             <div className="mt-5">
               <h1 className="lg:text-[20px] font-rising-sun font-bold mb-2">
