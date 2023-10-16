@@ -116,7 +116,7 @@ function App() {
               )}
             </a>
             <a
-              href="https://rxfatalslash.github.io/iaw"
+              href="https://rxfatalslash.github.io/widecopy"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={() => handleHover("option2")}
@@ -126,19 +126,19 @@ function App() {
                 <div className="relative">
                   <img
                     className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm shadow-imagenes filter blur-sm transition-all duration-200 ease-in-out"
-                    src={require("./img/iaw.png")}
-                    alt="LAMP"
+                    src={require("./img/ssh.jpg")}
+                    alt="SSH"
                   />
-                  <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[30%] md:left-[35%] transition-all duration-200 ease-in-out">
-                    Trabajos IAW
+                  <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[25%] md:left-[30%] transition-all duration-200 ease-in-out">
+                    Transmisión múltiple
                   </p>
                 </div>
               ) : (
                 <div>
                   <img
                     className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm shadow-imagenes transition-all duration-200 ease-in-out"
-                    src={require("./img/iaw.png")}
-                    alt="LAMP"
+                    src={require("./img/ssh.jpg")}
+                    alt="SSH"
                   />
                 </div>
               )}
