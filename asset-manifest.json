@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "./static/css/main.0c0b94b5.css",
-    "main.js": "./static/js/main.b2edd156.js",
+    "main.css": "./static/css/main.fc084ef9.css",
+    "main.js": "./static/js/main.e7d89778.js",
+    "static/media/foto.png": "./static/media/foto.415ed5f92b8900370c92.png",
     "static/media/Helvetica.ttf": "./static/media/Helvetica.06113bf748ae7dc33e05.ttf",
     "static/media/arch.png": "./static/media/arch.b3e54c00da83c4533dff.png",
     "static/media/RisingSun-Regular.otf": "./static/media/RisingSun-Regular.c76cb9c2ee789fb43454.otf",
-    "static/media/foto.jpg": "./static/media/foto.801516d1cc21b45f437c.jpg",
     "static/media/d3xnet.png": "./static/media/d3xnet.7692626c1c407e5ac016.png",
     "static/media/ssh.jpg": "./static/media/ssh.f68afb68d3caf0314115.jpg",
     "static/media/calculadora.jpg": "./static/media/calculadora.a05b3efe78c1f237bf0f.jpg",
     "static/media/tfg-asir.png": "./static/media/tfg-asir.61ccb329fd747a1d5439.png",
     "static/media/weather.png": "./static/media/weather.b9283726c5f94f2fc134.png",
     "index.html": "./index.html",
-    "main.0c0b94b5.css.map": "./static/css/main.0c0b94b5.css.map",
-    "main.b2edd156.js.map": "./static/js/main.b2edd156.js.map"
+    "main.fc084ef9.css.map": "./static/css/main.fc084ef9.css.map",
+    "main.e7d89778.js.map": "./static/js/main.e7d89778.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c0b94b5.css",
-    "static/js/main.b2edd156.js"
+    "static/css/main.fc084ef9.css",
+    "static/js/main.e7d89778.js"
   ]
 }
