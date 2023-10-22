@@ -12,7 +12,6 @@ module.exports = {
         containers: "#cff0ff",
         github: "#595858",
         linkedin: "#0e76a8",
-        facebook: "#3b5998",
       },
       colors: {
         disabled: "#757778",

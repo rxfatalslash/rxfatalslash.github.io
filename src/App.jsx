@@ -29,7 +29,7 @@ function App() {
         >
           <img
             className="object-scale-down h-[65%] rounded-md shadow-imagenes"
-            src={require("./img/foto.jpg")}
+            src={require("./img/foto.png")}
             alt="Foto personal"
           />
           <div className="flex flex-col mt-5 lg:mt-0 lg:ml-20">
@@ -290,11 +290,14 @@ function App() {
               <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"><g transform="scale(8.53333,8.53333)"><path d="M24,4h-18c-1.105,0 -2,0.895 -2,2v18c0,1.105 0.895,2 2,2h18c1.105,0 2,-0.895 2,-2v-18c0,-1.105 -0.895,-2 -2,-2zM10.954,22h-2.95v-9.492h2.95zM9.449,11.151c-0.951,0 -1.72,-0.771 -1.72,-1.72c0,-0.949 0.77,-1.719 1.72,-1.719c0.948,0 1.719,0.771 1.719,1.719c0,0.949 -0.771,1.72 -1.719,1.72zM22.004,22h-2.948v-4.616c0,-1.101 -0.02,-2.517 -1.533,-2.517c-1.535,0 -1.771,1.199 -1.771,2.437v4.696h-2.948v-9.492h2.83v1.297h0.04c0.394,-0.746 1.356,-1.533 2.791,-1.533c2.987,0 3.539,1.966 3.539,4.522z"></path></g></g>
             </svg>
           </a>
-          <a target="_blank" rel="noreferrer" href="https://www.facebook.com/aaron.sanchezmenendez.9/" className="w-[50px] lg:w-[100px] h-[50px] lg:h-[100px] text-white rounded-full bg-facebook hover:bg-blue-900 inline-flex items-center justify-center transition-all duration-200 ease-in-out">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-facebook w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
-              viewBox="0 0 16 16">
-              <path
-                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+          <a target="_blank" rel="noreferrer" href="https://www.facebook.com/aaron.sanchezmenendez.9/" className="w-[50px] lg:w-[100px] h-[50px] lg:h-[100px] text-white rounded-full bg-black hover:bg-gray-700 inline-flex items-center justify-center transition-all duration-200 ease-in-out">
+            <svg className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" space="preserve">
+              <defs>
+              </defs>
+              <g style={{stroke: 'none', strokeWidth: '0', strokeDasharray: 'none', strokeLinecap: 'butt', strokeLinejoin: 'miter', strokeMiterlimit: '10', fill: 'none', fillRule: 'nonzero', opacity: '1'}} transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                <polygon points="24.89,23.01 57.79,66.99 65.24,66.99 32.34,23.01 " style={{stroke: 'none', strokeWidth: '1', strokeDasharray: 'none', strokeLinecap: 'butt', strokeLinejoin: 'miter', strokeMiterlimit: '10', fill: 'white', fillRule: 'nonzero', opacity: '1'}} transform="  matrix(1 0 0 1 0 0) " />
+                <path d="M 72.349 0 H 17.651 C 7.902 0 0 7.902 0 17.651 v 54.699 C 0 82.098 7.902 90 17.651 90 h 54.699 C 82.098 90 90 82.098 90 72.349 V 17.651 C 90 7.902 82.098 0 72.349 0 z M 56.032 70.504 L 41.054 50.477 L 22.516 70.504 h -4.765 L 38.925 47.63 L 17.884 19.496 h 16.217 L 47.895 37.94 l 17.072 -18.444 h 4.765 L 50.024 40.788 l 22.225 29.716 H 56.032 z" style={{stroke: 'none', strokeWidth: '1', strokeDasharray: 'none', strokeLinecap: 'butt', strokeLinejoin: 'miter', strokeMiterlimit: '10', fill: 'white', fillRule: 'nonzero', opacity: '1'}} transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              </g>
             </svg>
           </a>
         </div>
