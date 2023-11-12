@@ -144,7 +144,7 @@ function App() {
               )}
             </a>
             <a
-              href="https://github.com/rxfatalslash/asir-tfg/blob/main/RS2.pdf"
+              href="https://drive.google.com/file/d/1o8aeFQ7shcAk_73USeMaZj7d6EVxdEQk/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={() => handleHover("option3")}
