@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 
 function App() {
   const [hover, setHover] = useState("about-me")
+  const [color, setColor] = useState('#f5f5f5')
   const [isValid, setIsValid] = useState("false")
 
   const handleHover = (option) => {
@@ -10,19 +11,30 @@ function App() {
   }
 
   const handleChange = (event) => {
-    const { value } = event.target
+    const { value } = event.target;
     setIsValid(validateEmail(value))
   }
 
   const validateEmail = (email) => {
-    const emailRegex = /^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,})+$/
+    const emailRegex = /^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,})+$/;
     return emailRegex.test(email)
+  }
+
+  const handleColor = () => {
+    const dark = color === "#f5f5f5" ? "#303030" : "#f5f5f5";
+    setColor(dark);
+    document.body.style.backgroundColor = dark;
+    document.querySelector('#about-me').style.color = color === "#f5f5f5" ? "white" : "black";
+    document.querySelector('#contacto').style.color = color === "#f5f5f5" ? "white" : "black";
+    document.querySelector('#proyectos').style.backgroundColor = color === "#f5f5f5" ? "#636363" : "#a8e4ff";
+    document.querySelector('#proyTit').style.color = color === "#f5f5f5" ? "white" : "black";
+    document.querySelector('#presentation').style.color = color === "#f5f5f5" ? "#bfbfbf" : "#757778";
   }
 
   return (
     <div>
       <header>
-        <Navbar />
+        <Navbar onButtonClick={handleColor} />
         <div
           id="about-me"
           className="lg:h-screen pt-[100px] lg:pt-0 flex flex-col lg:flex-row justify-center items-center mx-20 mb-20 lg:mb-0"
@@ -39,7 +51,7 @@ function App() {
             <h3 className="font-medium lg:text-[20px] tracking-wider mt-2 mb-10">
               ADMINISTRADOR DE SISTEMAS
             </h3>
-            <p className="max-w-[500px] font-sans text-disabled tracking-normal">
+            <p id="presentation" className="max-w-[500px] font-sans text-disabled tracking-normal">
               Mi nombre es Aarón Sánchez, soy administrador de sistemas y redes,
               con conocimientos de Windows y Linux. Además, poseo conocimiento
               sobre desarrollo web.
@@ -83,7 +95,7 @@ function App() {
           id="proyectos"
           className="w-[95%] bg-containers rounded-lg shadow-imagenes py-10 mb-10"
         >
-          <h1 className="text-[50px] text-center font-rising-sun font-semibold tracking-normal mx-10 rounded-sm">
+          <h1 id="proyTit" className="text-[50px] text-center font-rising-sun font-semibold tracking-normal mx-10 rounded-sm">
             Proyectos
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-4 mt-10 mx-5 xl:mx-0 px-10">
