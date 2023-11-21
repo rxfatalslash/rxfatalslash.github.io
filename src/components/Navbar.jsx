@@ -74,7 +74,7 @@ const Navbar = ({ onButtonClick }) => {
         >
           {
             color === "#cff0ff" ?
-              <svg className='fill-black hover:fill-[#636363] w-[15px] hover:w-[18px] transition-all duration-200 ease-in-out' xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 256 256" space="preserve">
+              <svg className='fill-black hover:fill-blue-400 w-[15px] hover:w-[18px] transition-all duration-200 ease-in-out' xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 256 256" space="preserve">
                 <defs>
                 </defs>
                 <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
@@ -82,7 +82,7 @@ const Navbar = ({ onButtonClick }) => {
                 </g>
               </svg>
               :
-              <svg className='fill-white stroke-white hover:fill-[#636363] w-[20px] hover:w-[23px] hover:stroke-black transition-all duration-200 ease-in-out' viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+              <svg className='fill-white stroke-white hover:fill-blue-400 w-[20px] hover:w-[23px] hover:stroke-blue-400 transition-all duration-200 ease-in-out' viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                 <g id="SVGRepo_iconCarrier"> <g clipPath="url(#a)" strokeWidth="1.5" strokeMiterlimit="10">
                   <path d="M5 12H1M23 12h-4M7.05 7.05 4.222 4.222M19.778 19.778 16.95 16.95M7.05 16.95l-2.828 2.828M19.778 4.222 16.95 7.05" strokeLinecap="round"></path>
@@ -91,7 +91,7 @@ const Navbar = ({ onButtonClick }) => {
                 </g>
                   <defs>
                     <clipPath id="a">
-                      <path className='hover:fill-[#636363]' d="M0 0h24v24H0z"></path>
+                      <path d="M0 0h24v24H0z"></path>
                     </clipPath>
                   </defs>
                 </g>
