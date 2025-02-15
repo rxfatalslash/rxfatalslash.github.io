@@ -43,7 +43,7 @@ function App() {
           className="lg:h-screen pt-[100px] lg:pt-0 flex flex-col lg:flex-row justify-center items-center mx-20 mb-20 lg:mb-0"
         >
           <img
-            className="object-scale-down h-[65%] rounded-md shadow-imagenes"
+            className="object-contain max-h-[65vh] rounded-md shadow-imagenes"
             src={require("./img/foto.png")}
             alt="Foto personal"
           />
@@ -52,36 +52,37 @@ function App() {
               AARÓN SÁNCHEZ
             </h1>
             <h3 className="font-medium lg:text-[20px] tracking-wider mt-2 mb-10">
-              ADMINISTRADOR DE SISTEMAS
+              CYBER SECURITY ANALYST
             </h3>
             <p id="presentation" className="max-w-[500px] font-sans text-disabled tracking-normal">
-              Mi nombre es Aarón Sánchez, soy administrador de sistemas y redes,
-              con conocimientos de Windows y Linux. Además, poseo conocimiento
-              sobre desarrollo web.
+              Mi nombre es Aarón Sánchez, soy administrador de sistemas y redes con conocimientos de Windows y Linux, 
+              y analista de ciberseguridad interesado tanto en Blue Team como en Read Team. Además, poseo conocimiento
+              sobre desarrollo web con JavaScript y frameworks como React, y en lenguajes de programación como
+              Python y Rust.
               <br />
               <br />
-              Estoy interesado en la ciberseguridad y actualmente estoy
-              cursando una especialización en este campo.
+              Cuento con titulación tanto en administración de sistemas y redes como en ciberseguridad. 
+              Actualmente estoy en proceso de obtención de certificaciones como CCNA y CEH.
             </p>
             <div className="mt-5">
               <h1 className="lg:text-[20px] font-rising-sun font-bold mb-2">
-                Windows
+                Ciberseguridad
               </h1>
               <div className="w-full h-6 bg-blue-700 rounded-full">
-                <div className="w-[95%] h-6 bg-blue-400 rounded-full text-white px-2">
-                  95%
+                <div className="w-[80%] h-6 bg-blue-400 rounded-full text-white px-2">
+                  80%
                 </div>
               </div>
               <h1 className="lg:text-[20px] font-rising-sun font-bold my-2">
                 Linux
               </h1>
               <div className="w-full h-6 bg-blue-700 rounded-full">
-                <div className="w-[70%] h-6 bg-blue-400 rounded-full text-white px-2">
-                  70%
+                <div className="w-[75%] h-6 bg-blue-400 rounded-full text-white px-2">
+                  75%
                 </div>
               </div>
               <h1 className="lg:text-[20px] font-rising-sun font-bold mt-2">
-                Desarrollo web
+                Programación
               </h1>
               <div className="w-full h-6 bg-blue-700 rounded-full">
                 <div className="w-[60%] h-6 bg-blue-400 rounded-full text-white px-2">
@@ -159,7 +160,7 @@ function App() {
               )}
             </a>
             <a
-              href="https://drive.google.com/file/d/1o8aeFQ7shcAk_73USeMaZj7d6EVxdEQk/view?usp=sharing"
+              href="https://github.com/rxfatalslash/RXBot"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={() => handleHover("option3")}
@@ -169,19 +170,19 @@ function App() {
                 <div className="relative">
                   <img
                     className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes filter blur-sm transition-all duration-200 ease-in-out"
-                    src={require("./img/tfg-asir.png")}
-                    alt="Logo Apache"
+                    src={require("./img/rxbot.png")}
+                    alt="Logo RXBot"
                   />
                   <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[20%] md:left-[40%] transition-all duration-200 ease-in-out">
-                    TFG ASIR
+                    Discord Bot
                   </p>
                 </div>
               ) : (
                 <div>
                   <img
                     className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes transition-all duration-200 ease-in-out"
-                    src={require("./img/tfg-asir.png")}
-                    alt="Logo Apache"
+                    src={require("./img/rxbot.png")}
+                    alt="Logo RXBot"
                   />
                 </div>
               )}
