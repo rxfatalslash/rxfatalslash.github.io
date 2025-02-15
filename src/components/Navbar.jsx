@@ -44,7 +44,7 @@ const Navbar = ({ onButtonClick }) => {
   return (
     <nav id='navbar' className="fixed flex flex-row justify-center lg:justify-between px-20 items-center bg-containers shadow-navbar w-screen h-[80px] z-50">
       <a href="#" className="text-3xl flex flex-row items-center">
-        <img className='w-[30px] h-[30px] mr-2' src={require('../img/d3xnet.png')} alt="Logo" />
+        <img className='w-[50px] h-[50px] mr-2' src={require('../img/rxnet.png')} alt="Logo" />
         Portfolio
       </a>
       <div className="hidden lg:flex flex-row font-medium">
