@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import Navbar from "./components/Navbar"
 
 function App() {
-  const [hover, setHover] = useState("about-me")
-  const [color, setColor] = useState('#f5f5f5')
-  const [isValid, setIsValid] = useState("false")
+  const [hover, setHover] = useState("about-me");
+  const [color, setColor] = useState('#f5f5f5');
+  const [isValid, setIsValid] = useState(false);
 
   const handleHover = (option) => {
     setHover((prevOption) => (prevOption === option ? null : option));
@@ -40,7 +40,7 @@ function App() {
         <Navbar onButtonClick={handleColor} />
         <div
           id="about-me"
-          className="lg:h-screen pt-[100px] lg:pt-0 flex flex-col lg:flex-row justify-center items-center mx-20 mb-20 lg:mb-0"
+          className="lg:h-screen pt-[100px] lg:pt-0 flex flex-col lg:flex-row justify-center items-center px-5 md:px-10 lg:px-20 mb-20 lg:mb-0"
         >
           <img
             className="object-contain max-h-[65vh] rounded-md shadow-imagenes"
@@ -48,7 +48,7 @@ function App() {
             alt="Foto personal"
           />
           <div className="flex flex-col mt-5 lg:mt-0 lg:ml-20">
-            <h1 className="font-bold text-[20px] lg:text-[50px] tracking-wider">
+            <h1 className="font-bold text-[20px]  md:text-[40px] lg:text-[50px] tracking-wider">
               AARÓN SÁNCHEZ
             </h1>
             <h3 className="font-medium lg:text-[20px] tracking-wider mt-2 mb-10">
@@ -57,12 +57,11 @@ function App() {
             <p id="presentation" className="max-w-[500px] font-sans text-disabled tracking-normal">
               Mi nombre es Aarón Sánchez, soy administrador de sistemas y redes con conocimientos de Windows y Linux, 
               y analista de ciberseguridad interesado tanto en Blue Team como en Read Team. Además, poseo conocimiento
-              sobre desarrollo web con JavaScript y frameworks como React, y en lenguajes de programación como
-              Python y Rust.
+              sobre desarrollo web con <b>JavaScript</b> y frameworks como <b>React</b>, y en lenguajes de programación como <b>Python</b> y <b>Rust</b>.
               <br />
               <br />
               Cuento con titulación tanto en administración de sistemas y redes como en ciberseguridad. 
-              Actualmente estoy en proceso de obtención de certificaciones como CCNA y CEH.
+              Actualmente estoy certificado en <b>CCST Cybersecurity</b> y estoy en proceso de obtención de varias certificaciones como <b>eJPTv2</b> y <b>CompTIA Security+</b>.
             </p>
             <div className="mt-5">
               <h1 className="lg:text-[20px] font-rising-sun font-bold mb-2">
@@ -99,10 +98,10 @@ function App() {
           id="proyectos"
           className="w-[95%] bg-containers rounded-lg shadow-imagenes py-10 mb-10"
         >
-          <h1 id="proyTit" className="text-[50px] text-center font-rising-sun font-semibold tracking-normal mx-10 rounded-sm">
+          <h1 id="proyTit" className="text-[30px] md:text-[40px] lg:text-[50px] text-center font-rising-sun font-semibold tracking-normal mx-10 rounded-sm">
             Proyectos
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-4 mt-10 mx-5 xl:mx-0 px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 mt-10 mx-5 xl:mx-0 px-5 md:px-8 xl:px-10">
             <a
               href="https://github.com/rxfatalslash/archinstall"
               target="_blank"
@@ -113,11 +112,11 @@ function App() {
               {hover === "option1" ? (
                 <div className="relative">
                   <img
-                    className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes filter blur-sm trasnition-all duration-200 ease-in-out"
+                    className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes filter blur-sm transition-all duration-200 ease-in-out"
                     src={require("./img/arch.png")}
                     alt="Arch Linux"
                   />
-                  <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[20%] md:left-[30%] transition-all duration-200 ease-in-out">
+                  <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] transition-all duration-200 ease-in-out">
                     Automatización Arch
                   </p>
                 </div>
@@ -132,7 +131,7 @@ function App() {
               )}
             </a>
             <a
-              href="https://github.com/rxfatalslash/widecopy"
+              href="https://github.com/rxfatalslash/wgcl"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={() => handleHover("option2")}
@@ -142,19 +141,19 @@ function App() {
                 <div className="relative">
                   <img
                     className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm shadow-imagenes filter blur-sm transition-all duration-200 ease-in-out"
-                    src={require("./img/ssh.jpg")}
-                    alt="SSH"
+                    src={require("./img/wireguard.png")}
+                    alt="Wireguard CLI"
                   />
-                  <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[25%] md:left-[30%] transition-all duration-200 ease-in-out">
-                    Transmisión múltiple
+                  <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] transition-all duration-200 ease-in-out">
+                    Wireguard CLI
                   </p>
                 </div>
               ) : (
                 <div>
                   <img
                     className="md:h-[100px] lg:h-[200px] w-full overflow-y-hidden rounded-sm shadow-imagenes transition-all duration-200 ease-in-out"
-                    src={require("./img/ssh.jpg")}
-                    alt="SSH"
+                    src={require("./img/wireguard.png")}
+                    alt="Wireguard CLI"
                   />
                 </div>
               )}
@@ -173,7 +172,7 @@ function App() {
                     src={require("./img/rxbot.png")}
                     alt="Logo RXBot"
                   />
-                  <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[20%] md:left-[40%] transition-all duration-200 ease-in-out">
+                  <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] transition-all duration-200 ease-in-out">
                     Discord Bot
                   </p>
                 </div>
@@ -188,7 +187,7 @@ function App() {
               )}
             </a>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 mx-5 xl:mx-0 px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 mx-5 xl:mx-0 px-5 md:px-8 xl:px-10">
             <a
               href="https://rxfatalslash.github.io/calculadoraWeb"
               target="_blank"
@@ -199,18 +198,18 @@ function App() {
               {hover === "option4" ? (
                 <div className="relative">
                   <img
-                    className="lg:h-[250px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes filter blur-sm trasnition-all duration-200 ease-in-out"
+                    className="md:h-[100px] lg:h-[250px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes transition-all duration-200 ease-in-out"
                     src={require("./img/calculadora.jpg")}
                     alt="Calculadora"
                   />
-                  <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[25%] md:left-[35%] transition-all duration-200 ease-in-out">
+                  <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] transition-all duration-200 ease-in-out">
                     Calculadora web
                   </p>
                 </div>
               ) : (
                 <div>
                   <img
-                    className="lg:h-[250px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes transition-all duration-200 ease-in-out"
+                    className="md:h-[100px] lg:h-[250px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes transition-all duration-200 ease-in-out"
                     src={require("./img/calculadora.jpg")}
                     alt="Calculadora"
                   />
@@ -227,18 +226,18 @@ function App() {
               {hover === "option5" ? (
                 <div className="relative">
                   <img
-                    className="lg:h-[250px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes filter blur-sm trasnition-all duration-200 ease-in-out"
+                    className="md:h-[100px] lg:h-[250px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes transition-all duration-200 ease-in-out"
                     src={require("./img/weather.png")}
                     alt="Tiempo"
                   />
-                  <p className="absolute bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] top-[45%] left-[20%] md:left-[35%] transition-all duration-200 ease-in-out">
+                  <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform bg-proyectos shadow-imagenes px-2 rounded-[4px] font-bold font-rising-sun tracking-normal text-[10px] md:text-[20px] transition-all duration-200 ease-in-out">
                     Aplicación de tiempo
                   </p>
                 </div>
               ) : (
                 <div>
                   <img
-                    className="lg:h-[250px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes transition-all duration-200 ease-in-out"
+                    className="md:h-[100px] lg:h-[250px] w-full overflow-y-hidden rounded-sm bg-white shadow-imagenes transition-all duration-200 ease-in-out"
                     src={require("./img/weather.png")}
                     alt="Tiempo"
                   />
@@ -251,12 +250,12 @@ function App() {
 
       <footer className="flex flex-col items-center py-10">
         <div id="contacto" className='w-[95%]'>
-          <h1 className="text-[50px] text-center font-rising-sun font-semibold tracking-normal mx-10 rounded-sm">
+          <h1 className="text-[30px] md:text-[40px] lg:text-[50px] text-center font-rising-sun font-semibold tracking-normal mx-10 rounded-sm">
             Contacto
           </h1>
-          <form id="form" className="mt-10" action="https://formsubmit.co/aaronsanchezmenendez@gmail.com" method="post" onChange={handleChange}>
-            <div className="grid grid-cols-12">
-              <div className="col-start-2 md:col-start-4 col-span-5 md:col-span-3 flex flex-col">
+          <form id="form" className="mt-10 w-full max-w-4xl mx-auto px-4" action="https://formsubmit.co/aaronsanchezmenendez@gmail.com" method="post" onChange={handleChange}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col">
                 <label className="font-bold" htmlFor="nombre">Nombre</label>
                 <input
                   id="nombre"
@@ -266,7 +265,7 @@ function App() {
                   placeholder="John Doe"
                 />
               </div>
-              <div className="col-span-5 md:col-span-3 ml-5 flex flex-col">
+              <div className="flex flex-col">
                 <label className="font-bold" htmlFor="email">Email</label>
                 <input
                   id="email"
@@ -277,20 +276,18 @@ function App() {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-12 mt-5">
-              <div className="col-start-2 md:col-start-4 col-span-10 md:col-span-6 flex flex-col">
-                <label className="font-bold" htmlFor="mensaje">Mensaje</label>
-                <textarea
-                  id="mensaje"
-                  name="mensaje"
-                  className="mensaje rounded-lg px-4 py-4 mt-2 focus:outline-blue-400"
-                  placeholder="Escribe aquí tu mensaje..."
-                  rows="5"
-                ></textarea>
-              </div>
+            <div className="mt-5 flex flex-col">
+              <label className="font-bold" htmlFor="mensaje">Mensaje</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                className="mensaje rounded-lg px-4 py-4 mt-2 focus:outline-blue-400"
+                placeholder="Escribe aquí tu mensaje..."
+                rows="5"
+              ></textarea>
             </div>
-            <div className="grid grid-cols-5 md:grid-cols-11">
-              <button className="col-start-3 md:col-start-6 mt-5 bg-blue-400 py-2 text-white rounded-sm font-rising-sun font-bold hover:bg-blue-500 transition-all duration-200 ease-in-out" type="submit">Enviar</button>
+            <div className="flex flex-col items-center mt-5">
+              <button className="bg-blue-400 py-2 px-6 text-white rounded-sm font-rising-sun font-bold hover:bg-blue-500 transition-all duration-200 ease-in-out" type="submit">Enviar</button>
             </div>
           </form>
         </div>
