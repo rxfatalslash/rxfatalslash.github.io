@@ -1,228 +1,153 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import logo from "../img/rxnet.png";
 
-const Navbar = ({ onButtonClick }) => {
-  const [color, setColor] = useState("#cff0ff");
-  const [active, setActive] = useState(false);
+const navigation = [
+  { label: "About", href: "#about-me", id: "about-me" },
+  { label: "Projects", href: "#projects", id: "projects" },
+  { label: "Contact", href: "#contact", id: "contact" },
+];
+
+const Navbar = ({ theme, onThemeToggle }) => {
+  const [activeSection, setActiveSection] = useState("about-me");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isLight = color === "#cff0ff";
-
   const menuRef = useRef(null);
   const toggleButtonRef = useRef(null);
-
-  const changeNavbarStyle = () => {
-    const dark = isLight ? "#636363" : "#cff0ff";
-    setColor(dark);
-    onButtonClick();
-  };
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen((prev) => !prev);
-  };
-
+  const isDark = theme === "dark";
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const closeMenu = (event) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+        toggleButtonRef.current?.focus();
+        return;
+      }
+
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
-        toggleButtonRef.current &&
-        !toggleButtonRef.current.contains(event.target)
+        !toggleButtonRef.current?.contains(event.target)
       ) {
         setMobileMenuOpen(false);
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", closeMenu);
+    document.addEventListener("keydown", closeMenu);
+
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", closeMenu);
+      document.removeEventListener("keydown", closeMenu);
     };
   }, []);
-
 
   useEffect(() => {
-    const scrollTracker = () => {
-      const sections = ["about-me", "proyectos", "contacto", "mode"];
-      for (let i = 0; i < sections.length; i++) {
-        const section = document.getElementById(sections[i]);
-        if (
-          section &&
-          section.getBoundingClientRect().top >= 0 &&
-          section.getBoundingClientRect().top <= window.innerHeight
-        ) {
-          setActive(sections[i]);
-          break;
+    const sections = navigation
+      .map(({ id }) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id);
         }
-      }
-    };
-    window.addEventListener("scroll", scrollTracker);
-    return () => window.removeEventListener("scroll", scrollTracker);
+      },
+      { rootMargin: "-25% 0px -60% 0px", threshold: [0, 0.25, 0.5] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
+  const linkClasses = (id) =>
+    `rounded-md px-2 py-1 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-500 ${
+      activeSection === id
+        ? "text-teal-700 dark:text-teal-400"
+        : "text-slate-700 hover:text-teal-700 dark:text-slate-300 dark:hover:text-teal-400"
+    }`;
+
   return (
-    <nav
-      id="navbar"
-      className={`fixed z-50 w-full h-[80px] shadow-navbar flex justify-between items-center px-6 lg:px-20 transition-colors duration-300 ${
-        isLight ? "bg-[#cff0ff] text-black" : "bg-[#636363] text-white"
-      }`}
-    >
-      <a href="#" className="flex items-center text-xl">
-        <img
-          src={require("../img/rxnet.png")}
-          alt="Logo"
-          className="w-10 h-10 mr-2"
-        />
-        Portfolio
-      </a>
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800/80 dark:bg-[#0b0f14]/85">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-10 lg:px-0">
+        <a href="#about-me" className="flex items-center gap-3 font-bold">
+          <img src={logo} alt="" className="h-10 w-10" />
+          <span>Aarón Sánchez</span>
+        </a>
 
-      <button
-        aria-label="Abrir menú"
-        className="lg:hidden"
-        onClick={toggleMobileMenu}
-      >
-        {mobileMenuOpen ? (
-          // Icono de cerrar
-          <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 6L18 18" stroke={isLight ? "#000" : "#fff"} strokeWidth="2" strokeLinecap="round" />
-            <path d="M6 18L18 6" stroke={isLight ? "#000" : "#fff"} strokeWidth="2" strokeLinecap="round" />
-          </svg>
-        ) : (
-          // Icono de hamburguesa
-          <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 18L20 18" stroke={isLight ? "#000" : "#fff"} strokeWidth="2" strokeLinecap="round" />
-            <path d="M4 12L20 12" stroke={isLight ? "#000" : "#fff"} strokeWidth="2" strokeLinecap="round" />
-            <path d="M4 6L20 6" stroke={isLight ? "#000" : "#fff"} strokeWidth="2" strokeLinecap="round" />
-          </svg>
-        )}
-      </button>
+        <div className="hidden items-center gap-5 font-medium lg:flex">
+          {navigation.map((item) => (
+            <a
+              key={item.id}
+              href={item.href}
+              className={linkClasses(item.id)}
+            >
+              {item.label}
+            </a>
+          ))}
+          <ThemeButton isDark={isDark} onClick={onThemeToggle} />
+        </div>
 
-      <div className="hidden lg:flex gap-6 items-center font-medium">
-        <a
-          href="#about-me"
-          className={`${
-            active === "about-me" ? "text-blue-800 font-bold" : "hover:text-blue-400"
-          } hover:font-bold transition-all duration-200`}
-        >
-          Sobre mí
-        </a>
-        <a
-          href="#proyectos"
-          className={`${
-            active === "proyectos" ? "text-blue-800 font-bold" : "hover:text-blue-400"
-          } hover:font-bold transition-all duration-200`}
-        >
-          Proyectos
-        </a>
-        <a
-          href="#contacto"
-          className={`${
-            active === "contacto" ? "text-blue-800 font-bold" : "hover:text-blue-400"
-          } hover:font-bold transition-all duration-200`}
-        >
-          Contacto
-        </a>
         <button
-          aria-label="Cambiar tema"
-          onClick={changeNavbarStyle}
-          className="hover:text-gray-600 hover:font-bold transition-all duration-200"
+          ref={toggleButtonRef}
+          type="button"
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMobileMenuOpen((open) => !open)}
+          className="rounded-lg p-2 text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-500 dark:text-white lg:hidden"
         >
-          {isLight ? (
-            <svg
-              className="fill-black hover:fill-blue-400 w-[15px] hover:w-[18px] transition-all duration-200"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 256 256"
-            >
-              <g transform="scale(2.81)">
-                <path d="M 87.823 60.7 c -0.463 -0.423 -1.142 -0.506 -1.695 -0.214 c -15.834 8.398 -35.266 2.812 -44.232 -12.718 c -8.966 -15.53 -4.09 -35.149 11.101 -44.665 c 0.531 -0.332 0.796 -0.963 0.661 -1.574 c -0.134 -0.612 -0.638 -1.074 -1.259 -1.153 c -9.843 -1.265 -19.59 0.692 -28.193 5.66 C 13.8 12.041 6.356 21.743 3.246 33.35 S 1.732 57.08 7.741 67.487 c 6.008 10.407 15.709 17.851 27.316 20.961 C 38.933 89.486 42.866 90 46.774 90 c 7.795 0 15.489 -2.044 22.42 -6.046 c 8.601 -4.966 15.171 -12.43 18.997 -21.586 C 88.433 61.79 88.285 61.123 87.823 60.7 z" strokeLinecap="round" />
-              </g>
-            </svg>
-          ) : (
-            <svg
-              className="fill-white stroke-white hover:fill-blue-400 w-[20px] hover:w-[23px] hover:stroke-blue-400 transition-all duration-200"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#ffffff"
-            >
-              <g strokeWidth="1.5" strokeMiterlimit="10">
-                <path d="M5 12H1M23 12h-4M7.05 7.05 4.222 4.222M19.778 19.778 16.95 16.95M7.05 16.95l-2.828 2.828M19.778 4.222 16.95 7.05" strokeLinecap="round" />
-                <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
-                <path d="M12 19v4M12 1v4" strokeLinecap="round" />
-              </g>
-            </svg>
-          )}
+          <span aria-hidden="true" className="text-2xl leading-none">
+            {mobileMenuOpen ? "×" : "☰"}
+          </span>
         </button>
       </div>
 
-      {/* Menú móvil */}
       <div
+        id="mobile-navigation"
         ref={menuRef}
-        className={`${
-          mobileMenuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
-        } lg:hidden origin-top absolute top-full left-0 w-full ${
-          isLight ? "bg-[#cff0ff] text-black" : "bg-[#303030] text-white"
-        } text-center z-40 transition-all duration-300 ease-in-out backdrop-blur-md shadow-md rounded-b-xl px-6 py-4 space-y-3`}
+        hidden={!mobileMenuOpen}
+        className="border-t border-slate-200 bg-white px-5 py-5 dark:border-slate-800 dark:bg-[#0b0f14] lg:hidden"
       >
-        <a
-          href="#about-me"
-          onClick={() => setMobileMenuOpen(false)}
-          className="block py-2 text-lg hover:text-blue-400 transition-colors duration-200"
-        >
-          Sobre mí
-        </a>
-        <a
-          href="#proyectos"
-          onClick={() => setMobileMenuOpen(false)}
-          className="block py-2 text-lg hover:text-blue-400 transition-colors duration-200"
-        >
-          Proyectos
-        </a>
-        <a
-          href="#contacto"
-          onClick={() => setMobileMenuOpen(false)}
-          className="block py-2 text-lg hover:text-blue-400 transition-colors duration-200"
-        >
-          Contacto
-        </a>
-        <button
-          onClick={() => {
-            changeNavbarStyle();
-            toggleMobileMenu(false);
-          }}
-          className="flex items-center justify-center w-full gap-2 py-2 text-lg hover:text-blue-400 transition-colors duration-200"
-        >
-          {isLight ? (
-            <>
-              <svg
-                className="fill-black w-[15px] stroke-black"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-              >
-                <g transform="scale(2.81)">
-                  <path d="M 87.823 60.7 c -0.463 -0.423 -1.142 -0.506 -1.695 -0.214 c -15.834 8.398 -35.266 2.812 -44.232 -12.718 c -8.966 -15.53 -4.09 -35.149 11.101 -44.665 c 0.531 -0.332 0.796 -0.963 0.661 -1.574 c -0.134 -0.612 -0.638 -1.074 -1.259 -1.153 c -9.843 -1.265 -19.59 0.692 -28.193 5.66 C 13.8 12.041 6.356 21.743 3.246 33.35 S 1.732 57.08 7.741 67.487 c 6.008 10.407 15.709 17.851 27.316 20.961 C 38.933 89.486 42.866 90 46.774 90 c 7.795 0 15.489 -2.044 22.42 -6.046 c 8.601 -4.966 15.171 -12.43 18.997 -21.586 C 88.433 61.79 88.285 61.123 87.823 60.7 z" strokeLinecap="round" />
-                </g>
-              </svg>
-              Modo oscuro
-            </>
-          ) : (
-            <>
-              <svg
-                className="w-5 h-5 fill-white stroke-white"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke="#ffffff"
-              >
-                <g strokeWidth="1.5" strokeMiterlimit="10">
-                  <path d="M5 12H1M23 12h-4M7.05 7.05 4.222 4.222M19.778 19.778 16.95 16.95M7.05 16.95l-2.828 2.828M19.778 4.222 16.95 7.05" strokeLinecap="round" />
-                  <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
-                  <path d="M12 19v4M12 1v4" strokeLinecap="round" />
-                </g>
-              </svg>
-              Modo claro
-            </>
-          )}
-        </button>
+        <div className="mx-auto flex max-w-7xl flex-col gap-2">
+          {navigation.map((item) => (
+            <a
+              key={item.id}
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`${linkClasses(item.id)} py-3`}
+            >
+              {item.label}
+            </a>
+          ))}
+          <ThemeButton
+            isDark={isDark}
+            onClick={() => {
+              onThemeToggle();
+              setMobileMenuOpen(false);
+            }}
+            mobile
+          />
+        </div>
       </div>
     </nav>
   );
 };
+
+const ThemeButton = ({ isDark, onClick, mobile = false }) => (
+  <button
+    type="button"
+    onClick={onClick}
+    aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+    className={`rounded-lg border border-slate-300 px-3 py-2 font-medium text-slate-700 transition hover:border-teal-600 hover:text-teal-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-500 dark:border-slate-700 dark:text-slate-200 dark:hover:border-teal-400 dark:hover:text-teal-400 ${
+      mobile ? "mt-2 w-full text-left" : ""
+    }`}
+  >
+    <span aria-hidden="true">{isDark ? "☀" : "☾"}</span>
+    {mobile && <span className="ml-2">{isDark ? "Light mode" : "Dark mode"}</span>}
+  </button>
+);
 
 export default Navbar;
