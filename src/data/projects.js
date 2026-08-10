@@ -1,5 +1,5 @@
 import pmapImage from "../img/pmap.png";
-import cyberToolsImage from "../img/cybertools.png";
+import pythonC2Image from "../img/pythonc2.png";
 import wireGuardImage from "../img/wgcl.png";
 import archImage from "../img/archinstall.png";
 
@@ -15,13 +15,13 @@ export const projects = [
     featured: true,
   },
   {
-    title: "CyberTools",
-    category: "Security toolkit",
+    title: "Python C2 Lab",
+    category: "Adversary Simulation",
     description:
-      "A collection of utilities created to automate common cybersecurity and network analysis tasks.",
-    image: cyberToolsImage,
-    technologies: ["Python", "Automation", "Security"],
-    repository: "https://github.com/rxfatalslash/CyberTools",
+      "A local only educational lab exploring authenticated client-server communication, protocol design and defensive detection opportunities.",
+    image: pythonC2Image,
+    technologies: ["Python", "TCP/IP", "HMAC-SHA256"],
+    repository: "https://github.com/rxfatalslash/pythonC2",
   },
   {
     title: "WireGuard CLI",
