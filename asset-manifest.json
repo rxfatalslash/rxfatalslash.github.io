@@ -1,22 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.63345b47.css",
-    "main.js": "./static/js/main.21e6f230.js",
-    "static/media/foto.png": "./static/media/foto.ed5ab6b84d25a2005cdd.png",
+    "main.css": "./static/css/main.6caba9db.css",
+    "main.js": "./static/js/main.2ac7dee4.js",
+    "static/media/cybertools.png": "./static/media/cybertools.8e4b5129895f56dbab6b.png",
+    "static/media/archinstall.png": "./static/media/archinstall.c9699d5caefa986414f3.png",
+    "static/media/wgcl.png": "./static/media/wgcl.135785af86b748b51277.png",
+    "static/media/pmap.png": "./static/media/pmap.25945f9acef61f691e9d.png",
     "static/media/Helvetica.ttf": "./static/media/Helvetica.06113bf748ae7dc33e05.ttf",
+    "static/media/rxnet.png": "./static/media/rxnet.e067089a2425b0f19278.png",
     "static/media/RisingSun-Regular.otf": "./static/media/RisingSun-Regular.c76cb9c2ee789fb43454.otf",
-    "static/media/rxnet.png": "./static/media/rxnet.c47a2f7fea09e32ec8ba.png",
-    "static/media/calculadora.jpg": "./static/media/calculadora.a05b3efe78c1f237bf0f.jpg",
-    "static/media/wireguard.png": "./static/media/wireguard.d366ff76fae34171d714.png",
-    "static/media/rxbot.png": "./static/media/rxbot.47a1e4f34210be210a76.png",
-    "static/media/arch.png": "./static/media/arch.8609fcc01a71e2472b78.png",
-    "static/media/weather.png": "./static/media/weather.b9283726c5f94f2fc134.png",
+    "static/media/foto.webp": "./static/media/foto.2bc3c1d780cdcb421b86.webp",
     "index.html": "./index.html",
-    "main.63345b47.css.map": "./static/css/main.63345b47.css.map",
-    "main.21e6f230.js.map": "./static/js/main.21e6f230.js.map"
+    "main.6caba9db.css.map": "./static/css/main.6caba9db.css.map",
+    "main.2ac7dee4.js.map": "./static/js/main.2ac7dee4.js.map"
   },
   "entrypoints": [
-    "static/css/main.63345b47.css",
-    "static/js/main.21e6f230.js"
+    "static/css/main.6caba9db.css",
+    "static/js/main.2ac7dee4.js"
   ]
 }
