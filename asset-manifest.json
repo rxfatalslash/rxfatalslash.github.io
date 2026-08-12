@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.d391c3f4.css",
-    "main.js": "/static/js/main.44e85630.js",
-    "static/media/archinstall.png": "/static/media/archinstall.c9699d5caefa986414f3.png",
-    "static/media/wgcl.png": "/static/media/wgcl.135785af86b748b51277.png",
-    "static/media/pmap.png": "/static/media/pmap.25945f9acef61f691e9d.png",
-    "static/media/pythonc2.png": "/static/media/pythonc2.986759dfc4a62e54fdae.png",
-    "static/media/Helvetica.ttf": "/static/media/Helvetica.06113bf748ae7dc33e05.ttf",
-    "static/media/rxnet.png": "/static/media/rxnet.e067089a2425b0f19278.png",
-    "static/media/RisingSun-Regular.otf": "/static/media/RisingSun-Regular.c76cb9c2ee789fb43454.otf",
-    "static/media/foto.webp": "/static/media/foto.2bc3c1d780cdcb421b86.webp",
-    "index.html": "/index.html",
-    "main.d391c3f4.css.map": "/static/css/main.d391c3f4.css.map",
-    "main.44e85630.js.map": "/static/js/main.44e85630.js.map"
+    "main.css": "./static/css/main.6caba9db.css",
+    "main.js": "./static/js/main.c2ac7960.js",
+    "static/media/archinstall.png": "./static/media/archinstall.c9699d5caefa986414f3.png",
+    "static/media/wgcl.png": "./static/media/wgcl.135785af86b748b51277.png",
+    "static/media/pmap.png": "./static/media/pmap.25945f9acef61f691e9d.png",
+    "static/media/pythonc2.png": "./static/media/pythonc2.986759dfc4a62e54fdae.png",
+    "static/media/Helvetica.ttf": "./static/media/Helvetica.06113bf748ae7dc33e05.ttf",
+    "static/media/rxnet.png": "./static/media/rxnet.e067089a2425b0f19278.png",
+    "static/media/RisingSun-Regular.otf": "./static/media/RisingSun-Regular.c76cb9c2ee789fb43454.otf",
+    "static/media/foto.webp": "./static/media/foto.2bc3c1d780cdcb421b86.webp",
+    "index.html": "./index.html",
+    "main.6caba9db.css.map": "./static/css/main.6caba9db.css.map",
+    "main.c2ac7960.js.map": "./static/js/main.c2ac7960.js.map"
   },
   "entrypoints": [
-    "static/css/main.d391c3f4.css",
-    "static/js/main.44e85630.js"
+    "static/css/main.6caba9db.css",
+    "static/js/main.c2ac7960.js"
   ]
 }
