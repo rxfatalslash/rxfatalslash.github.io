@@ -65,7 +65,7 @@ const Footer = () => {
 
           <div className="mt-8 flex flex-wrap items-center gap-3 lg:mt-0">
             <a
-              href="mailto:aaronsanchezmenendez@gmail.com"
+              href="mailto:contact@ringzero.es"
               className="
                 inline-flex items-center gap-2 rounded-lg
                 bg-slate-950 px-5 py-3
